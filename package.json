@@ -3,13 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "format": "prettier --write '**/*.{js,ts,vue,html,json}'"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^2.6.14"
+    "axios": "^1.7.7",
+    "core-js": "^3.38.1",
+    "element-ui": "^2.15.14",
+    "js-cookie": "^3.0.5",
+    "normalize.css": "^8.0.1",
+    "nprogress": "^0.2.0",
+    "path-browserify": "^1.0.1",
+    "path-to-regexp": "^8.2.0",
+    "svg-sprite-loader": "^6.0.11",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -19,6 +30,11 @@
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "html-webpack-plugin": "^5.6.0",
+    "mockjs": "^1.1.0",
+    "prettier": "3.3.3",
+    "sass": "1.32.13",
+    "sass-loader": "10.2.0",
     "vue-template-compiler": "^2.6.14"
   },
   "eslintConfig": {
@@ -33,11 +49,17 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "vue/multi-word-component-names": "off",
+      "no-unused-vars": "off"
+    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "resolutions": {
+    "**/mockjs/commander": "11.1.0"
+  }
 }
