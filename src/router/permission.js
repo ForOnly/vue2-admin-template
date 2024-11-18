@@ -12,7 +12,7 @@ const whiteList = ["/login"]; // no redirect whitelist
  * 路由权限配置
  * @param { 路由} router
  */
-function setupPerssion(router) {
+function setupRouterGuard(router) {
   router.beforeEach(async (to, from, next) => {
     // start progress bar
     NProgress.start();
@@ -65,4 +65,4 @@ function setupPerssion(router) {
   });
 }
 
-export default setupPerssion;
+export default setupRouterGuard;

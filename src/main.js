@@ -7,21 +7,19 @@ import "@/styles/index.scss"; // global css
 import router from "./router";
 import store from "./store";
 import "@/icons"; // icon
-import setupPerssion from "./router/permission";
+import setupRouterGuard from "./router/permission";
 
 Vue.config.productionTip = false;
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "development") {
   const { mockXHR } = require("../mock");
   mockXHR();
 }
 
 Vue.use(ElementUI);
 
-Vue.config.productionTip = false;
-
-// 启动路由权限配置
-setupPerssion(router);
+// 启动路由守卫配置
+setupRouterGuard(router);
 
 new Vue({
   store,
