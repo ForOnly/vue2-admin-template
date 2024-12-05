@@ -1,5 +1,7 @@
 # vue2-admin-template
 
+此项目是对[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)进行修改调整,大部分采用vue-admin-template
+
 ## Create project
 
 ```
