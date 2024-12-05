@@ -95,7 +95,7 @@ export const constantRoutes = [
   {
     path: "/nested",
     component: BaseLayout,
-    redirect: "/nested/menu1",
+    redirect: "menu1",
     name: "Nested",
     meta: {
       title: "Nested",
@@ -107,6 +107,7 @@ export const constantRoutes = [
         component: () => import("@/views/nested/menu1/index"), // Parent router-view
         name: "Menu1",
         meta: { title: "Menu1" },
+        redirect: "menu1-1",
         children: [
           {
             path: "menu1-1",
@@ -119,6 +120,7 @@ export const constantRoutes = [
             component: () => import("@/views/nested/menu1/menu1-2"),
             name: "Menu1-2",
             meta: { title: "Menu1-2" },
+            redirect: "menu1-2-1",
             children: [
               {
                 path: "menu1-2-1",

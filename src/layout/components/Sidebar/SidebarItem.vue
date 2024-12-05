@@ -8,14 +8,21 @@
       ">
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'submenu-title-noDropdown': !isNest }">
-          <item :icon="onlyOneChild.meta.icon || (item.meta && item.meta.icon)" :title="onlyOneChild.meta.title" />
+          <common-icon :name="onlyOneChild.meta.icon" />
+          <template v-if="onlyOneChild.meta.title" #title>
+            <span>{{ onlyOneChild.meta.title }}</span>
+          </template>
+          <!-- <template> -->
+          <!-- <item :icon="onlyOneChild.meta.icon || (onlyOneChild.meta && onlyOneChild.meta.icon)" :title="onlyOneChild.meta.title" /> -->
+          <!-- </template> -->
         </el-menu-item>
       </app-link>
     </template>
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
-      <template slot="title">
-        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
+      <template v-if="item.meta.title" #title>
+        <common-icon :name="item.meta.icon" />
+        <span>{{ item.meta.title }}</span>
       </template>
       <sidebar-item
         v-for="child in item.children"
@@ -34,10 +41,11 @@ import { isExternal } from "@/utils/sysUtils";
 import Item from "./Item";
 import AppLink from "./Link";
 import FixiOSBug from "./FixiOSBug";
+import CommonIcon from "@/components/CommonIcon/index.vue";
 
 export default {
   name: "SidebarItem",
-  components: { Item, AppLink },
+  components: { CommonIcon, AppLink },
   mixins: [FixiOSBug],
   props: {
     // route object

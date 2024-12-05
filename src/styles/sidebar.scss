@@ -55,19 +55,19 @@
       overflow: hidden;
     }
 
-    .svg-icon {
-      margin-right: 16px;
-    }
-
-    .sub-el-icon {
-      margin-right: 12px;
-      margin-left: -2px;
-    }
-
     .el-menu {
       border: none;
       height: 100%;
       width: 100% !important;
+
+      .svg-icon {
+        margin-right: 16px;
+        margin-left: -2px;
+      }
+      .sub-el-icon {
+        margin-right: 16px;
+        margin-left: -2px;
+      }
     }
 
     // menu hover
@@ -89,6 +89,26 @@
 
       &:hover {
         background-color: $subMenuHover !important;
+      }
+    }
+  }
+
+  .el-menu-item{
+    .svg-icon {
+      vertical-align: middle;
+      width: 24px;
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+
+  .el-submenu {
+    & > .el-submenu__title {
+      .svg-icon {
+        vertical-align: middle;
+        width: 24px;
+        text-align: center;
+        font-size: 18px;
       }
     }
   }
