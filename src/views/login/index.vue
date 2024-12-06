@@ -40,7 +40,7 @@
           auto-complete="on"
           @keyup.enter.native="handleLogin" />
         <span class="show-pwd" @click="showPwd">
-          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
+          <common-icon :name="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
 
@@ -140,7 +140,8 @@ export default {
 /* 修复input 背景不协调 和光标变色 */
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
-$bg: #283443;
+// $bg: #283443;
+$bg: #21252b;
 $light_gray: #fff;
 $cursor: #fff;
 
@@ -183,7 +184,8 @@ $cursor: #fff;
 </style>
 
 <style lang="scss" scoped>
-$bg: #2d3a4b;
+// $bg: #2d3a4b;
+$bg: #21252b;
 $dark_gray: #889aa4;
 $light_gray: #eee;
 

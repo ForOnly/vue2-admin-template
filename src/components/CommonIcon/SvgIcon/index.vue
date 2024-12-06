@@ -21,7 +21,7 @@ export default {
     },
   },
   created() {
-    // console.log(this.iconStyle);
+    console.log(this.iconStyle);
   },
 
   computed: {

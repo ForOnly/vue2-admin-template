@@ -38,11 +38,10 @@ import path from "path-browserify";
 import { isExternal } from "@/utils/sysUtils";
 import AppLink from "./Link";
 import FixiOSBug from "../FixiOSBug";
-import CommonIcon from "@/components/CommonIcon/index.vue";
 
 export default {
   name: "SidebarItem",
-  components: { CommonIcon, AppLink },
+  components: { AppLink },
   mixins: [FixiOSBug],
   props: {
     // route object

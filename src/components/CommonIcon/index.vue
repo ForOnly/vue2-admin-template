@@ -40,7 +40,7 @@ export default {
       return sizeVal && !reg.test(String(sizeVal)) ? `${sizeVal}px` : sizeVal;
     },
     mergeStyle() {
-      let size = this.iconSize.value ? this.iconSize.value : "18px";
+      let size = this.iconSize.value ? this.iconSize.value + "px" : "16px";
       let color = this.color ? this.color : "";
       let svgStyle = {
         width: size,
