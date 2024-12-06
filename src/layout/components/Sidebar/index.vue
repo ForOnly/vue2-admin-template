@@ -20,8 +20,8 @@
 <script>
 import variables from "@/styles/variables.module.scss";
 import { mapGetters } from "vuex";
-import Logo from "./Logo";
-import SidebarItem from "./SidebarItem";
+import Logo from "./comp/Logo";
+import SidebarItem from "./comp/SidebarItem.vue";
 
 export default {
   components: { SidebarItem, Logo },

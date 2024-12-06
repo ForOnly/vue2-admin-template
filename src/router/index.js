@@ -95,7 +95,7 @@ export const constantRoutes = [
   {
     path: "/nested",
     component: BaseLayout,
-    redirect: "menu1",
+    redirect: "noRedirect",
     name: "Nested",
     meta: {
       title: "Nested",

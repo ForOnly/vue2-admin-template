@@ -27,7 +27,7 @@ module.exports = defineConfig({
     open: false, //配置自动启动浏览器
     setupMiddlewares: (middlewares, devServer) => {
       const app = devServer.app;
-      require("./mock/mock-server.js")(app); // 在 setupMiddlewares 中添加自定义中间件
+      if (process.env.NODE_ENV === "development") require("./mock/mock-server.js")(app); // 在 setupMiddlewares 中添加自定义中间件
       return middlewares; // 返回中间件链
     },
   },

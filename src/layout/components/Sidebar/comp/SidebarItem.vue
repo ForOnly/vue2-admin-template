@@ -8,20 +8,17 @@
       ">
       <app-link v-if="onlyOneChild.meta" :to="resolvePath(onlyOneChild.path)">
         <el-menu-item :index="resolvePath(onlyOneChild.path)" :class="{ 'submenu-title-noDropdown': !isNest }">
-          <common-icon :name="onlyOneChild.meta.icon" />
+          <common-icon :name="onlyOneChild.meta.icon" :color="`${variables.menuIconColor}`" />
           <template v-if="onlyOneChild.meta.title" #title>
             <span>{{ onlyOneChild.meta.title }}</span>
           </template>
-          <!-- <template> -->
-          <!-- <item :icon="onlyOneChild.meta.icon || (onlyOneChild.meta && onlyOneChild.meta.icon)" :title="onlyOneChild.meta.title" /> -->
-          <!-- </template> -->
         </el-menu-item>
       </app-link>
     </template>
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template v-if="item.meta.title" #title>
-        <common-icon :name="item.meta.icon" />
+        <common-icon :name="item.meta.icon" :color="`${variables.menuIconColor}`" />
         <span>{{ item.meta.title }}</span>
       </template>
       <sidebar-item
@@ -36,11 +33,11 @@
 </template>
 
 <script>
+import variables from "@/styles/variables.module.scss";
 import path from "path-browserify";
 import { isExternal } from "@/utils/sysUtils";
-import Item from "./Item";
 import AppLink from "./Link";
-import FixiOSBug from "./FixiOSBug";
+import FixiOSBug from "../FixiOSBug";
 import CommonIcon from "@/components/CommonIcon/index.vue";
 
 export default {
@@ -67,6 +64,11 @@ export default {
     // TODO: refactor with render function
     this.onlyOneChild = null;
     return {};
+  },
+  computed: {
+    variables() {
+      return variables;
+    },
   },
   methods: {
     hasOneShowingChild(children = [], parent) {

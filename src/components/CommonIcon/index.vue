@@ -31,7 +31,7 @@ export default {
     return {};
   },
   created() {
-    console.log(this.name);
+    // console.log(this.name);
   },
   computed: {
     iconSize() {
@@ -41,7 +41,7 @@ export default {
     },
     mergeStyle() {
       let size = this.iconSize.value ? this.iconSize.value : "18px";
-      let color = this.color.value ? this.color.value : "";
+      let color = this.color ? this.color : "";
       let svgStyle = {
         width: size,
         height: size,
